@@ -174,10 +174,9 @@ footer{padding:50px 20px 70px;text-align:center;color:var(--soft);font-size:.85r
     document.getElementById("m").textContent=pad(Math.floor(s%3600/60));
   }
   tick();setInterval(tick,30000);
-  var ics="BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nDTSTART:20270328T030000Z\r\nDTEND:20270328T070000Z\r\nSUMMARY:何冠霖 & 楊念臻 婚宴\r\nLOCATION:青青風車莊園 維也納廳\r\nEND:VEVENT\r\nEND:VCALENDAR";
-  var a=document.getElementById("cal");
-  a.href="data:text/calendar;charset=utf-8,"+encodeURIComponent(ics);
-  a.setAttribute("download","wedding.ics");
+
+  // 已經把原本會強制覆蓋 #cal 的 .ics 下載程式碼完全清除！
+
   var els=document.querySelectorAll(".rv");
   if("IntersectionObserver" in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.15});
